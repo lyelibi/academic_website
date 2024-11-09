@@ -54,7 +54,7 @@ social:
 #- icon: twitter
 #  icon_pack: fab
 #  link: https://twitter.com/spiindoctor
-- icon: bluesky
+- icon: mastodon
   icon_pack: fab
   link: https://bsky.app/profile/spiindoctor.bsky.social
 - icon: graduation-cap  # Alternatively, use `google-scholar` icon from `ai` icon pack
