@@ -51,9 +51,12 @@ social:
 - icon: envelope
   icon_pack: fas
   link: 'mailto:yelibi@spincitylab.com'
-- icon: twitter
+#- icon: twitter
+#  icon_pack: fab
+#  link: https://twitter.com/spiindoctor
+- icon: bluesky
   icon_pack: fab
-  link: https://twitter.com/spiindoctor
+  link: https://bsky.app/profile/spiindoctor.bsky.social
 - icon: graduation-cap  # Alternatively, use `google-scholar` icon from `ai` icon pack
   icon_pack: fas
   link: https://scholar.google.co.za/citations?user=0603t8cAAAAJ
