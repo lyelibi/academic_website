@@ -5,7 +5,7 @@ authors: ['admin'] # Or your author ID
 tags: ["codespaces", "workflow"]
 categories: ["technical"]
 draft: false
-summary: "This post was created using GitHub Codespaces."
+summary: "In many real-world settings—whether online gaming communities, financial markets, or even social media dynamics—individuals (or “agents”) continually choose among multiple strategies without complete information about payoffs"
 image:
   caption: ""
   focal_point: ""
