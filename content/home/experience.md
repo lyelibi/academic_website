@@ -23,7 +23,7 @@ date_format: Jan 2006
 #   Begin multi-line descriptions with YAML's `|2-` multi-line prefix.
 experience:
   - title: Lead Research Scientist
-    company: Discover Financial Services
+    company: Capital One
     company_url: ''
     company_logo:
     location: Chicago
