@@ -13,7 +13,7 @@ external_link: ""
 image:
   caption: FSPC Research Poster
   focal_point: Smart
-  filename: featured.jpg
+  filename: 1765233670693-b5905c1f-cafc-45dc-a8d0-8925862935fa_1.jpg
 
 links: []
 url_code: ""
@@ -28,7 +28,7 @@ url_video: ""
 slides: ""
 ---
 
-## Research Poster: FSPC
+<!-- ## Research Poster: FSPC
 
 This research poster presents work on financial systems, price dynamics, and correlation analysis. The poster provides a comprehensive overview of methodology, key findings, and implications.
 
@@ -38,4 +38,4 @@ This research poster presents work on financial systems, price dynamics, and cor
 - Statistical and computational methods
 - Risk and volatility analysis
 
-*Replace `featured.jpg` in this folder with your actual research poster image.*
+*Replace `featured.jpg` in this folder with your actual research poster image.* -->

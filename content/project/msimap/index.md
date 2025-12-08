@@ -12,7 +12,7 @@ external_link: ""
 image:
   caption: MSIMAP Research Poster
   focal_point: Smart
-  filename: featured.jpg
+  filename: 1765234012622-681859c1-c6db-40f5-af19-da7daf537044_1.jpg
 
 links: []
 url_code: ""
@@ -27,13 +27,11 @@ url_video: ""
 slides: ""
 ---
 
-## Research Poster: MSIMAP
+<!-- ## Research Poster: MSIMAP
 
 This research poster presents work on multi-scale information systems and modeling approaches. The poster provides a comprehensive overview of methodology, key findings, and implications.
 
 ### Key Topics
 - Multi-scale analysis frameworks
 - Information extraction techniques
-- Practical applications and results
-
-*Replace `featured.jpg` in this folder with your actual research poster image.*
+- Practical applications and results -->

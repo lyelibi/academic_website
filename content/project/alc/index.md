@@ -12,7 +12,7 @@ external_link: ""
 image:
   caption: ALC Research Poster
   focal_point: Smart
-  filename: featured.jpg
+  filename: 1765233628568-e54d0b32-8761-46b3-a72e-488e693e1b25_1.jpg
 
 links: []
 url_code: ""
@@ -26,7 +26,7 @@ url_video: ""
 #   Otherwise, set `slides = ""`.
 slides: ""
 ---
-
+<!-- 
 ## Research Poster: ALC
 
 This research poster presents work on advanced learning and computation frameworks. The poster provides a comprehensive overview of methodology, key findings, and implications.
@@ -36,4 +36,4 @@ This research poster presents work on advanced learning and computation framewor
 - Computational approaches
 - Empirical validation and results
 
-*Replace `featured.jpg` in this folder with your actual research poster image.*
+*Replace `featured.jpg` in this folder with your actual research poster image.* -->
