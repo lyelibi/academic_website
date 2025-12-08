@@ -28,7 +28,7 @@ experience:
     company_logo:
     location: Chicago
     date_start: '2022-05-01'
-    date_end: ''
+    date_end: '2025-11-30'
     description:
         
   - title: Quantitative Researcher
