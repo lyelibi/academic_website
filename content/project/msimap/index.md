@@ -18,13 +18,13 @@ image:
 links:
   - icon: file-pdf
     icon_pack: fas
-    name: Poster PDF
-    url: uploads/projects/poster_MS_IMAP.pdf
+    name: Higher Resolution PDF
+    url: poster_MS_IMAP.pdf
 
-url_code: ""
-url_pdf: "uploads/projects/poster_MS_IMAP.pdf"
-url_slides: ""
-url_video: ""
+# url_code: ""
+# url_pdf: "uploads/projects/poster_MS_IMAP.pdf"
+# url_slides: ""
+# url_video: ""
 
 # Slides (optional).
 #   Associate this project with Markdown slides.
@@ -44,15 +44,7 @@ This research poster presents work on multi-scale information systems and modeli
 
 ## Related Research Papers
 
-Please add your linked research papers below:
-
-- **Paper 1:** MS-IMAP
-  - Link: `https://arxiv.org/abs/2406.02778`
-  <!-- - Authors: `[add authors]` -->
-
-<!-- - **Paper 2:** [Title to be added]
-  - Link: `[add DOI or URL]`
-  - Authors: `[add authors]` -->
+- **[MS-IMAP](https://arxiv.org/abs/2406.02778)** - arXiv:2406.02778
 
 <!-- ## Project Resources
 

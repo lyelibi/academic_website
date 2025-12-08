@@ -19,13 +19,13 @@ image:
 links:
   - icon: file-pdf
     icon_pack: fas
-    name: Poster PDF
-    url: uploads/projects/F_SPC_Poster.pdf
+    name: Higher Resolution PDF
+    url: F_SPC_Poster.pdf
 
-url_code: ""
-url_pdf: "uploads/projects/F_SPC_Poster.pdf"
-url_slides: ""
-url_video: ""
+# url_code: ""
+# url_pdf: "uploads/projects/F_SPC_Poster.pdf"
+# url_slides: ""
+# url_video: ""
 
 # Slides (optional).
 #   Associate this project with Markdown slides.
@@ -46,15 +46,7 @@ This research poster presents work on financial systems, price dynamics, and cor
 
 ## Related Research Papers
 
-Please add your linked research papers below:
-
-- **Paper 1:** Fast Super-Paramagnetic Clustering
-  - Link: `https://arxiv.org/abs/1810.02529`
-  <!-- - Authors: `[add authors]` -->
-
-<!-- - **Paper 2:** [Title to be added]
-  - Link: `[add DOI or URL]`
-  - Authors: `[add authors]` -->
+- **[Fast Super-Paramagnetic Clustering](https://arxiv.org/abs/1810.02529)** - arXiv:1810.02529
 
 <!-- ## Project Resources
 

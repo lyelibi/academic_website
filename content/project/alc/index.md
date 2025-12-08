@@ -18,7 +18,7 @@ image:
 links:
   - icon: file-pdf
     icon_pack: fas
-    name: Poster PDF
+    name: High Resolution PDF
     url: ALC_Poster.pdf
 
 # url_code: ""
@@ -44,15 +44,7 @@ This research poster presents work on advanced learning and computation framewor
 
 ## Related Research Papers
 
-Please add your linked research papers below:
-
-- **Paper 1:** Agglomerative Likelihood Clustering
-  - Link: `https://arxiv.org/abs/1908.00951`
-  <!-- - Authors: `[add authors]` -->
-
-<!-- - **Paper 2:** [Title to be added]
-  - Link: `[add DOI or URL]`
-  - Authors: `[add authors]` -->
+- **[Agglomerative Likelihood Clustering](https://arxiv.org/abs/1908.00951)** - arXiv:1908.00951
 <!-- 
 ## Project Resources
 
