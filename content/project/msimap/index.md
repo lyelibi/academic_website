@@ -46,9 +46,9 @@ This research poster presents work on multi-scale information systems and modeli
 
 Please add your linked research papers below:
 
-- **Paper 1:** [Title to be added]
-  - Link: `[https://arxiv.org/abs/2406.02778]`
-  - Authors: `[add authors]`
+- **Paper 1:** MS-IMAP
+  - Link: `https://arxiv.org/abs/2406.02778`
+  <!-- - Authors: `[add authors]` -->
 
 <!-- - **Paper 2:** [Title to be added]
   - Link: `[add DOI or URL]`

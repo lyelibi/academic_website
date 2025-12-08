@@ -48,9 +48,9 @@ This research poster presents work on financial systems, price dynamics, and cor
 
 Please add your linked research papers below:
 
-- **Paper 1:** [Fast Super-Paramagnetic Clustering]
-  - Link: `[https://arxiv.org/abs/1810.02529]`
-  - Authors: `[add authors]`
+- **Paper 1:** Fast Super-Paramagnetic Clustering
+  - Link: `https://arxiv.org/abs/1810.02529`
+  <!-- - Authors: `[add authors]` -->
 
 <!-- - **Paper 2:** [Title to be added]
   - Link: `[add DOI or URL]`
