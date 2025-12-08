@@ -46,4 +46,13 @@ design:
 
   # For Showcase view, flip alternate rows?
   flip_alt_rows: false
+  
+  # Image settings for higher resolution display
+  image:
+    # Image quality (75-100, higher = better quality but larger file)
+    quality: 90
+    # Focal point alignment
+    focal_point: 'center'
+    # Show image captions
+    caption: true
 ---
