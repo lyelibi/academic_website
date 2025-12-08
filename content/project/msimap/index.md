@@ -12,7 +12,7 @@ external_link: ""
 image:
   caption: MSIMAP Research Poster
   focal_point: Smart
-  filename: 1765234012622-681859c1-c6db-40f5-af19-da7daf537044_1.jpg
+  filename: 1765234012622-681859c1-c6db-40f5-af19-da7daf537044_1.png
 
 links: []
 url_code: ""

@@ -13,7 +13,7 @@ external_link: ""
 image:
   caption: FSPC Research Poster
   focal_point: Smart
-  filename: 1765233670693-b5905c1f-cafc-45dc-a8d0-8925862935fa_1.jpg
+  filename: 1765233670693-b5905c1f-cafc-45dc-a8d0-8925862935fa_1.png
 
 links: []
 url_code: ""
