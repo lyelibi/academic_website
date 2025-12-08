@@ -22,7 +22,7 @@ date_format: Jan 2006
 #   Leave `date_end` empty if it's your current employer.
 #   Begin multi-line descriptions with YAML's `|2-` multi-line prefix.
 experience:
-  - title: Lead Research Scientist
+  - title: Lead AI Scientist
     company: Capital One
     company_url: ''
     company_logo:
@@ -31,7 +31,7 @@ experience:
     date_end: ''
     description:
         
-  - title: Investment Research Analyst
+  - title: Quantitative Researcher
     company: Mass PRIM
     company_url: ''
     company_logo:
@@ -40,7 +40,7 @@ experience:
     date_end: '2022-03-01'
     description:
         
-  - title: Machine Learning Researcher
+  - title: AI Scientist
     company: Boston Fusion Corp.
     company_url: ''
     company_logo:
@@ -48,7 +48,7 @@ experience:
     date_start: '2020-01-01'
     date_end: '2020-11-01'
     description: 
-  - title: Research Assistant
+  - title: Graduate Research Assistant
     company: University of Cape Town
     company_url: ''
     company_logo:

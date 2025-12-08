@@ -12,31 +12,26 @@ status:
 superuser: true
 
 # Role/position/tagline
-role: Applied Scientist & Quantitative Researcher - Emerging Capabilities Research Group 
+role: Research Scientist
 
 # Organizations/Affiliations to show in About widget
 organizations:
-- name: Discover Financial Services
-  url: https://www.discover.com/
 - name: UCT Statistical Finance
   url: https://zivahub.uct.ac.za/Statistical_Sciences_Statistical_Finance
 
 # Short bio (displayed in user profile at end of posts)
-bio: Researcher interested in dynamics of financial and economic systems through the length of complexity theory.
+bio: Statistical Scientist
 
 # Interests to show in About widget
 interests:
-- Econophysics
+- Spectral Representation Learning
 - Quantitative Finance
-- Statistical Mechanics
-- Network Science
-- Machine Learning
-- Manifold Learning
+- 
 
 # Education to show in About widget
 education:
   courses:
-  - course: Ph.D. in Statistical Sciences (2028)
+  - course: Ph.D. in Statistical Sciences (2027)
     institution: University of Cape Town
   - course: M.Sc. in Statistical Sciences (2019)
     institution: University of Cape Town
@@ -81,6 +76,30 @@ email: "yelibi@spincitylab.com"
 highlight_name: false
 ---
 
-I am a Lead Researcher at one of Capital One Data Science Research team. My research focuses on leveraging machine learning techniques to extract signals from data. We work with large tabular datasets to predict risk behavior for financial use-cases. Our use-cases go from feature noise cleaning, feature selection in high dimensional regimes, Embedding and clustering very large datasets, explainability, fairness, and bias methods for both supervised and unsupervised models, and finally supervised learning model development. 
+## About Me
 
-I'm also a PhD student at the University of Cape Town 🇿🇦 (https://science.uct.ac.za/department-statistics) under the supervision of Prof. Tim Gebbie where my PhD projects focus on theoretical factor models and correlation matrices, Statistical Analyses of emergence and extreme events in complex systems using unsupervised ML methods (i.e. Dimensionality Reduction, Matrix Decomposition, Data Clustering) with application to synthetic, economic, financial, and industrial data.
+I am a Statistical Sciences PhD candidate based in **Houston**, currently completing my degree under the supervision of **Prof. Tim Gebbie**.
+
+### Research Focus: Spectral Representation Learning
+
+My PhD projects focus on **Spectral Representation Learning**, specifically:
+
+* Theoretical factor models and correlation matrices.
+* Statistical Analyses of emergence and extreme events in complex systems using unsupervised machine learning methods (i.e., Dimensionality Reduction, Matrix Decomposition, Data Clustering) with application to synthetic, economic, financial, and industrial data.
+
+### Professional Experience
+
+I was previously a **Lead Research Scientist** within Discover's (Now Capital One) Data Science Research team. My work focused on leveraging machine learning techniques to extract signals from large tabular datasets to predict risk for various financial products.
+
+Key areas of expertise included:
+
+* Feature noise cleaning and feature selection in high-dimensional regimes.
+* Embedding and clustering very large datasets.
+* Explainability, fairness, and bias estimation methods for both supervised and unsupervised models.
+* Supervised learning model development for credit acquisition and anti-money laundering.
+
+---
+
+### Get In Touch
+
+Feel free to reach out to me for potential **collaborations, internships, consulting, and other full-time work opportunities in AI.**
