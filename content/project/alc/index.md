@@ -12,7 +12,7 @@ external_link: ""
 image:
   caption: ALC Research Poster
   focal_point: Smart
-  filename: 1765233628568-e54d0b32-8761-46b3-a72e-488e693e1b25_1.png
+  filename: featured.png
 
 links: []
 url_code: ""
