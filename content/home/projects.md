@@ -50,7 +50,7 @@ design:
   # Image settings for higher resolution display
   image:
     # Image quality (75-100, higher = better quality but larger file)
-    quality: 90
+    quality: 100
     # Focal point alignment
     focal_point: 'center'
     # Show image captions
