@@ -20,13 +20,13 @@ organizations:
   url: https://zivahub.uct.ac.za/Statistical_Sciences_Statistical_Finance
 
 # Short bio (displayed in user profile at end of posts)
-bio: Statistical Scientist
+# bio: AI Scientist
 
 # Interests to show in About widget
 interests:
 - Spectral Representation Learning
 - Quantitative Finance
-- 
+- Complex Systems
 
 # Education to show in About widget
 education:
