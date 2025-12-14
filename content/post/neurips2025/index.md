@@ -1,9 +1,9 @@
 ---
-title: My New Post
-subtitle: Add a subtitle here
+title: NeurIPS 2025
+subtitle: 
 
 # Summary for listings and search engines
-summary: Add a brief summary of your post here. This will appear in post listings and search results.
+summary: Curated list of research posted from the 39th Annual Conference on Neural Information Processing Systems (NeurIPS 2025).
 
 # Link this post with a project
 projects: []
@@ -22,11 +22,11 @@ featured: false
 
 # Featured image
 # Place an image named `featured.jpg/png` in this page's folder and customize its options here.
-image:
-  caption: 'Image credit: [**Unsplash**](https://unsplash.com/)'
-  focal_point: ""
-  placement: 2
-  preview_only: false
+# image:
+#   caption: 'Image credit: [**Unsplash**](https://unsplash.com/)'
+#   focal_point: ""
+#   placement: 2
+#   preview_only: false
 
 authors:
 - admin
