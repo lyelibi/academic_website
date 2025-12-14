@@ -5,6 +5,9 @@ tags:
 - Deep Learning
 date: "2016-04-27T00:00:00Z"
 
+# Hide this project from the website
+active: false
+
 # Optional external URL for project (replaces project detail page).
 external_link: ""
 
