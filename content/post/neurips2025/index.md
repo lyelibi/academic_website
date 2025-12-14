@@ -42,7 +42,7 @@ categories:
 # NeurIPS 2025: Research Highlights & Commentary
 
 **Conference Overview**
-The 39th Annual Conference on Neural Information Processing Systems (NeurIPS 2025) in San Diego highlighted a distinct shift from purely generative tasks toward "AI for Science" and industrial-grade engineering. Key themes included scaling graph analytics to billion-node networks, improving the interpretability of financial models, and the rigorous benchmarking of tabular data.
+The 39th Annual Conference on Neural Information Processing Systems (NeurIPS 2025) in San Diego highlighted a distinct shift from purely generative tasks toward "AI for Science" and industrial-grade engineering. Key themes (I was interested in) included scaling graph analytics to billion-node networks, improving the interpretability of financial models, and the rigorous benchmarking of tabular data.
 
 Below is a curated categorization of research posters, with a specific focus on their applicability to industrial contexts, financial services, and high-dimensional data environments.
 
@@ -52,18 +52,9 @@ Below is a curated categorization of research posters, with a specific focus on 
 **Category Summary:**
 While Deep Learning dominates perception tasks (vision, NLP), tree-based models (XGBoost, Random Forests) remain the gold standard in industry for tabular data. This year's research focuses on hybridizing the two: identifying ways to make trees differentiable, more expressive via non-linear splits, or interpretable via graph theory. The goal is to handle the "big data" regime—millions of rows and thousands of columns—typical of banking and insurance.
 
-### Autoencoding Random Forests (RFAE)
-
-[Read the Paper (arXiv:2505.21441)](https://arxiv.org/abs/2505.21441)
-
-* **Key Finding:** RFAE introduces a method to use Random Forests as autoencoders by utilizing the "Breiman kernel" for encoding and a constrained optimization process for decoding, effectively handling mixed-type tabular data.
-* **Commentary:** This is arguably one of the most exciting developments of the conference. Since we can map decision trees to graphs, the entire graph analytics toolset becomes available to better understand the latent features induced by tree models. If you can extract a graph from an XGBoost model (technically multiple graphs), you can calculate adjacency matrices and use spectral tools (e.g., decompositions) or graph embedding techniques to understand the expressive power of decision trees. This approach allows us to investigate axis-aligned trees, oblique trees, and SGT trees through a graph-theoretical lens. For industrial practitioners relying on tree ensembles, this offers a major leap in interpretability and feature extraction.
-
-{{< figure src="/uploads/posters/rfae_poster.jpg" title="Autoencoding Random Forests (RFAE) — Poster" >}}
-
 ### Learning Gradient Boosted Decision Trees with Algorithmic Recourse
 
-[Read the Paper (OpenReview)](https://openreview.net/pdf?id=144423da238a6a76c3974ca3476ee35b1385048f)
+[Read the Paper (OpenReview)](https://openreview.net/forum?id=r9zzTQLnxw)
 
 * **Key Finding:** The method incorporates a "recourse loss" into GBDT training, ensuring that executable actions exist for users to overturn unfavorable predictions.
 * **Commentary:** The idea here is clever: train a model with an additional recourse loss to ensure an actionable variable exists to overturn a prediction. Having worked in financial services, where models must be explainable (often via Shapley values), this paper is puzzling but promising. In the US, an adverse credit decision requires a "reason," usually linked to model features via Shapley values. However, important features aren't always actionable (e.g., a customer cannot instantly change their age or credit history length). This model goes further than policy requires by learning a "causal" intervention—essentially guaranteeing we can supply an action for the customer to improve their odds. The main risk is whether this makes the model prone to "gaming," but it represents a more proactive approach to ethical lending.
@@ -90,7 +81,7 @@ While Deep Learning dominates perception tasks (vision, NLP), tree-based models 
 
 ### A Faster Training Algorithm for Regression Trees with Linear Leaves
 
-[Read the Paper (OpenReview)](https://openreview.net/forum?id=09509700d2505269a03971cbde0910af65487cce)
+[Read the Paper (OpenReview)](https://openreview.net/forum?id=urDdBuhbLx)
 
 * **Key Finding:** An adaptive optimization strategy switches between matrix inversion methods based on sample-to-dimension ratios, speeding up training for oblique trees.
 * **Commentary:** Optimizing oblique trees (which split on multiple variables to learn non-linear boundaries) usually requires the Tree Alternating Optimization (TAO) method, involving the inversion of correlation matrices. By utilizing the Sherman-Morrison formula, this work allows us to invert a potentially massive correlation matrix by handling a smaller one—a very useful mathematical identity. The method effectively manages the tradeoff between the number of samples at a node and the dimensionality of the dataset. Interestingly, complexity analysis reveals it is preferable to grow larger (deeper) trees for scalability using this method. The speedups are significant as dimensionality increases, and it accelerates classical CART training as well.
@@ -108,12 +99,31 @@ While Deep Learning dominates perception tasks (vision, NLP), tree-based models 
 
 ### TabArena: A Living Benchmark for Machine Learning on Tabular Data
 
-[Read the Paper (Emergent Mind)](https://www.emergentmind.com/topics/tabarena)
+[Read the Paper (OpenReview)](https://openreview.net/forum?id=urDdBuhbLx)
 
 * **Key Finding:** An open-source benchmark with 51 curated datasets to accurately compare Deep Learning methods against tree-based models.
 * **Commentary:** Similar to TabSTAR, the evaluation here is limited to small datasets with relatively low dimensionality. While it aims to be the "ImageNet of tables," it does not challenge the status of tree models as the standard for massive datasets. Until benchmarks incorporate the "huge" scale data found in banking and tech (millions of rows, thousands of columns), their utility for industrial decision-making remains limited.
 
 {{< figure src="/uploads/posters/tabarena_poster.jpg" title="TabArena — Poster" >}}
+
+
+### SpEx: A Spectral Approach to Explainable Clustering
+
+[Read the Paper (arXiv:2511.00885)](https://arxiv.org/abs/2511.00885)
+
+* **Key Finding:** SpEx approximates complex reference clustering using an interpretable decision tree by optimizing a multi-way cut objective.
+* **Commentary:** It turns out that trees grown by decision tree models can be mapped to graphs—a simple realization with profound implications. The paper argues that classical CART trees are incentivized to split samples from separate classes but not penalized for splitting samples from the *same* class, which fragments clusters. SpEx generates a graph of the data, learns its clustering, and trains a decision tree using this graph. This effectively produces a tree model that respects the underlying cluster structure better than standard methods, validating the study of tree models as graphs.
+
+{{< figure src="/uploads/posters/spex_poster.jpg" title="SpEx: A Spectral Approach to Explainable Clustering — Poster" >}}
+
+### Autoencoding Random Forests (RFAE)
+
+[Read the Paper (arXiv:2505.21441)](https://arxiv.org/abs/2505.21441)
+
+* **Key Finding:** RFAE introduces a method to use Random Forests as autoencoders by utilizing the "Breiman kernel" for encoding and a constrained optimization process for decoding, effectively handling mixed-type tabular data.
+* **Commentary:** This is arguably one of the most exciting developments of the conference. Since we can map decision trees to graphs, the entire graph analytics toolset becomes available to better understand the latent features induced by tree models. If you can extract a graph from an XGBoost model (technically multiple graphs), you can calculate adjacency matrices and use spectral tools (e.g., decompositions) or graph embedding techniques to understand the expressive power of decision trees. This approach allows us to investigate axis-aligned trees, oblique trees, and SGT trees through a graph-theoretical lens. For industrial practitioners relying on tree ensembles, this offers a major leap in interpretability and feature extraction.
+
+{{< figure src="/uploads/posters/rfae_poster.jpg" title="Autoencoding Random Forests (RFAE) — Poster" >}}
 
 ---
 
@@ -148,15 +158,6 @@ Graph Neural Networks (GNNs) are moving beyond small academic datasets. The focu
 
 {{< figure src="/uploads/posters/coarsening_poster.jpg" title="Taxonomy of Reduction Matrices for Graph Coarsening — Poster" >}}
 
-### SpEx: A Spectral Approach to Explainable Clustering
-
-[Read the Paper (arXiv:2511.00885)](https://arxiv.org/abs/2511.00885)
-
-* **Key Finding:** SpEx approximates complex reference clustering using an interpretable decision tree by optimizing a multi-way cut objective.
-* **Commentary:** It turns out that trees grown by decision tree models can be mapped to graphs—a simple realization with profound implications. The paper argues that classical CART trees are incentivized to split samples from separate classes but not penalized for splitting samples from the *same* class, which fragments clusters. SpEx generates a graph of the data, learns its clustering, and trains a decision tree using this graph. This effectively produces a tree model that respects the underlying cluster structure better than standard methods, validating the study of tree models as graphs.
-
-{{< figure src="/uploads/posters/spex_poster.jpg" title="SpEx: A Spectral Approach to Explainable Clustering — Poster" >}}
-
 ---
 
 ## 3. Agentic AI & Financial Simulation
@@ -183,7 +184,7 @@ The intersection of Large Language Models (LLMs) and Agent-Based Modeling (ABM) 
 
 ### EconGym: A Scalable AI Testbed with Diverse Economic Tasks
 
-[Read the Paper (arXiv:2505.15155 - related)](https://chatpaper.com/paper/149947)
+[Read the Paper (OpenReview)](https://openreview.net/forum?id=qPrBgHgsmP)
 
 * **Key Finding:** A unified simulation platform benchmarking AI agents across diverse economic scenarios and heterogeneous roles.
 * **Commentary:** The authors attempt to create a general-purpose economic simulator, but this generality is its weakness. Economic modeling requires carefully designed market clearing mechanisms specific to the problem being solved. Markets are where agents interact, and that interaction process must be rigorous. It is unlikely one can make this "general" without taking shortcuts on the interaction mechanisms. While the goal of a standardized testbed is noble, the complexity of correctly modeling diverse economic interactions likely makes a "one-size-fits-all" software solution infeasible.
@@ -207,7 +208,7 @@ This section covers the mathematical backbone of the conference: new correlation
 
 ### SHGR: A Generalized Maximal Correlation Coefficient
 
-[Read the Paper (OpenReview)](https://openreview.net/pdf?id=58cf19b2b73bcb55d28fed96ccbffc7531445046)
+[Read the Paper (OpenReview)](https://openreview.net/forum?id=c1snZ9dvCR)
 
 * **Key Finding:** SHGR is a differentiable estimator for maximal correlation, robust to noise and capable of capturing non-linear dependencies.
 * **Commentary:** New correlation coefficients appear every few years, but often their benefits are unclear. However, in industrial contexts (e.g., using Mutual Information for feature grouping), there is a clear need for non-linear dependency measures. What distinguishes SHGR is the rigorous protocol established to test it: capturing non-linear patterns, computing cost, and robustness to noise/extreme values. It appears to outperform most existing metrics on these criteria. This is exciting, but like all theoretical metrics, it needs to be implemented and evaluated in a production environment to prove it offers a tangible performance improvement.
@@ -226,84 +227,34 @@ This section covers the mathematical backbone of the conference: new correlation
 ---
 
 ## Additional Research
-*The following posters were also analyzed but did not receive specific commentary during the review session. They are categorized here for completeness.*
-
-**Statistical Inference for Gradient Boosting Regression**
-[Read the Paper](https://openreview.net/forum?id=StatisticalInferenceGB)
-* *Category:* Statistical Machine Learning
-* *Key Finding:* Modifies gradient boosting to use a moving average of trees, satisfying the Central Limit Theorem to derive valid confidence intervals.
-
-**Subgraph Federated Learning via Spectral Methods**
-[Read the Paper](https://openreview.net/forum?id=FedLAP)
-* *Category:* Federated Learning
-* *Key Finding:* FedLAP+ uses spectral smoothing to capture global graph structure across distributed subgraphs while maintaining privacy.
-
-**Mitra: Mixed Synthetic Priors for Enhancing Tabular Foundation Models**
-[Read the Paper](https://openreview.net/forum?id=MitraTabular)
-* *Category:* Tabular Deep Learning
-* *Key Finding:* Pre-training on a "cocktail" of synthetic data priors boosts the performance and distinctiveness of tabular foundation models.
-
-**Nonlinear Laplacians: Tunable principal component analysis**
-[Read the Paper](https://openreview.net/forum?id=NonlinearLaplacians)
-* *Category:* Spectral Algorithms
-* *Key Finding:* A spectral algorithm with a tunable parameter to incorporate directional prior information, improving signal recovery in noisy matrices.
-
-**Spectral Estimation with Free Decompression**
-[Read the Paper](https://openreview.net/forum?id=FreeDecompression)
-* *Category:* High-Performance Computing
-* *Key Finding:* Estimates spectral density of massive matrices by solving a PDE on a small submatrix, addressing the memory wall problem.
-
-**Improving Decision Trees through the Lens of Parameterized Local Search**
-[Read the Paper](https://openreview.net/forum?id=ImprovingDecisionTrees)
-* *Category:* Theoretical Computer Science
-* *Key Finding:* Identifies specific conditions (fixed-parameter tractability) where local search operations for decision trees can be efficiently optimized.
-
-**Differentiable Decision Tree via "ReLU+Argmin" Reformulation**
-[Read the Paper](https://openreview.net/forum?id=DifferentiableTree)
-* *Category:* Differentiable Programming
-* *Key Finding:* Reformulates decision tree splitting as a differentiable "ReLU + Argmin" task, enabling gradient-based training.
-
-**A Geometric Analysis of PCA**
-[Read the Paper](https://openreview.net/forum?id=GeometricPCA)
-* *Category:* Theoretical ML
-* *Key Finding:* Identifies the specific geometric properties of data distribution that determine the excess risk of PCA.
-
-**Can neural networks discover data structures?**
-[Read the Paper](https://openreview.net/forum?id=NNDataStructures)
-* *Category:* Neural Algorithmic Reasoning
-* *Key Finding:* Neural networks playing a cooperative search game can rediscover classical structures like K-d trees from scratch.
-
-**Regression Trees Know Calculus**
-[Read the Paper](https://openreview.net/forum?id=RegressionTreesCalculus)
-* *Category:* Interpretable ML
-* *Key Finding:* Demonstrates that regression trees can estimate gradients via finite differences, enabling gradient-based interpretation methods.
+*The following posters were also reviewed by me during the conference but did not receive specific commentary during the review session. They are categorized here for completeness.*
 
 **Return of ChebNet (Stable-ChebNet)**
-[Read the Paper](https://openreview.net/forum?id=ReturnChebNet)
+[Read the Paper](https://openreview.net/forum?id=oLyfML1Qze)
 * *Category:* Graph Neural Networks
 * *Key Finding:* Revives ChebNet by modifying it into a stable dynamical system, allowing it to scale to large receptive fields without oversmoothing.
 
 **Best of Both Worlds: Bridging Laplace and Fourier**
-[Read the Paper](https://ml4physicalsciences.github.io/2025/files/NeurIPS_ML4PS_2025_281.pdf)
+[Read the Paper](https://openreview.net/forum?id=wq5kBGP1wx)
 * *Category:* Scientific Machine Learning
 * *Key Finding:* Separates differential equations into transient (Laplace) and steady-state (Fourier) parts for better accuracy in operator learning.
 
+**Improving Decision Trees through the Lens of Parameterized Local Search**
+[Read the Paper](https://openreview.net/forum?id=FB5nWEQV7K)
+* *Category:* Theoretical Computer Science
+* *Key Finding:* Identifies specific conditions (fixed-parameter tractability) where local search operations for decision trees can be efficiently optimized.
+
+**Differentiable Decision Tree via "ReLU+Argmin" Reformulation**
+[Read the Paper](https://openreview.net/forum?id=F11iEhKoYp)
+* *Category:* Differentiable Programming
+* *Key Finding:* Reformulates decision tree splitting as a differentiable "ReLU + Argmin" task, enabling gradient-based training.
+
+**Regression Trees Know Calculus**
+[Read the Paper](https://openreview.net/forum?id=wFXvD83mhb)
+* *Category:* Interpretable ML
+* *Key Finding:* Demonstrates that regression trees can estimate gradients via finite differences, enabling gradient-based interpretation methods.
+
 **What We Don’t C: Representations beyond VAEs**
-[Read the Paper (arXiv:2511.09433)](https://arxiv.org/abs/2511.09433)
+[Read the Paper (arXiv:2511.09433)](https://openreview.net/forum?id=F2USOqa0La)
 * *Category:* Representation Learning / Astrophysics
 * *Key Finding:* Uses "Latent Guided Flow Matching" to disentangle and discover hidden factors (like anomalies) that were not present in the original conditioning labels.
-
-**Orchestration Framework for Financial Agents**
-[Read the Paper](https://openreview.net/forum?id=OrchestrationAgents)
-* *Category:* Financial AI
-* *Key Finding:* A multi-agent framework where specialized LLM agents (Planner, Risk Manager) collaborate to execute trading strategies.
-
-**Systemic Risk and Bank Networks**
-[Read the Paper](https://openreview.net/forum?id=SystemicRiskKG)
-* *Category:* Financial AI
-* *Key Finding:* Uses LLMs to build Knowledge Graphs from news text, quantifying systemic risk and contagion better than numerical models alone.
-
-**Adaptive Constrained Optimization for Tabular Synthetic Data Generation**
-[Read the Paper](https://openreview.net/forum?id=AdaptiveConstrainedOpt)
-* *Category:* Generative AI
-* *Key Finding:* Dynamically adjusts acceptance boundaries during VAE/GAN training to ensure synthetic data satisfies hard constraints without wasteful rejection sampling.
