@@ -14,7 +14,7 @@ weight: 35
 title: Project Graph (In Progress)
 
 design:
-	columns: "2"
+    columns: "2"
 ---
 
 <!-- Use the project graph shortcode below to render the graph for your projects: -->
