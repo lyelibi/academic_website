@@ -1,0 +1,108 @@
+<div id="graph-wrapper" style="width: 100%; height: 600px; background: #fdfdfd; border: 1px solid #ddd; border-radius: 8px; position: relative; overflow: hidden;">
+    <svg id="d3-network" width="100%" height="100%"></svg>
+</div>
+
+<script src="https://d3js.org/d3.v7.min.js"></script>
+
+<script>
+    // --- MANUAL DATA ENTRY ---
+    // This is where you hand-curate your universe.
+    const data = {
+        nodes: [
+            { id: "Center", label: "My Portfolio", group: "core", radius: 20, url: "/" },
+            
+            // Project Nodes
+            { id: "P1", label: "Neural Nets", group: "AI", radius: 12, url: "/project/neural-nets/" },
+            { id: "P2", label: "Climate Data", group: "Data", radius: 12, url: "/project/climate/" },
+            { id: "P3", label: "Bio-Informatics", group: "Biology", radius: 12, url: "/project/bio/" },
+            
+            // Skill/Tag Nodes (to act as clusters)
+            { id: "Python", label: "Python", group: "skill", radius: 8, url: "#" },
+        ],
+        links: [
+            { source: "Center", target: "P1" },
+            { source: "Center", target: "P2" },
+            { source: "Center", target: "P3" },
+            
+            // Connecting projects to skills/tags
+            { source: "P1", target: "Python" },
+            { source: "P2", target: "Python" }
+        ]
+    };
+
+    // --- D3 ENGINE ---
+    const svg = d3.select("#d3-network");
+    const width = document.getElementById('graph-wrapper').clientWidth;
+    const height = document.getElementById('graph-wrapper').clientHeight;
+
+    // The Simulation
+    const simulation = d3.forceSimulation(data.nodes)
+        .force("link", d3.forceLink(data.links).id(d => d.id).distance(120))
+        .force("charge", d3.forceManyBody().strength(-300))
+        .force("center", d3.forceCenter(width / 2, height / 2));
+
+    // Draw Links
+    const link = svg.append("g")
+        .selectAll("line")
+        .data(data.links)
+        .join("line")
+        .attr("stroke", "#999")
+        .attr("stroke-opacity", 0.6)
+        .attr("stroke-width", 2);
+
+    // Create Node Groups (Circle + Label)
+    const node = svg.append("g")
+        .selectAll(".node")
+        .data(data.nodes)
+        .join("g")
+        .attr("class", "node")
+        .call(d3.drag() // Allows you to grab and move nodes
+            .on("start", dragstarted)
+            .on("drag", dragged)
+            .on("end", dragended))
+        .on("click", (event, d) => {
+            if (d.url !== "#") window.location.href = d.url;
+        });
+
+    // Add the Circles
+    node.append("circle")
+        .attr("r", d => d.radius)
+        .attr("fill", d => {
+            if (d.group === "core") return "#2c3e50";
+            if (d.group === "AI") return "#e74c3c";
+            if (d.group === "skill") return "#f1c40f";
+            return "#3498db";
+        });
+
+    // Add the Labels
+    node.append("text")
+        .text(d => d.label)
+        .attr("x", 15)
+        .attr("y", 5)
+        .style("font-family", "sans-serif")
+        .style("font-size", "12px")
+        .style("fill", "#333");
+
+    // Update positions on every tick
+    simulation.on("tick", () => {
+        link.attr("x1", d => d.x)
+            .attr("y1", d => d.y)
+            .attr("x2", d => d.target.x)
+            .attr("y2", d => d.target.y);
+
+        node.attr("transform", d => `translate(${d.x},${d.y})`);
+    });
+
+    // Drag Functions
+    function dragstarted(event, d) {
+        if (!event.active) simulation.alphaTarget(0.3).restart();
+        d.fx = d.x; d.fy = d.y;
+    }
+    function dragged(event, d) {
+        d.fx = event.x; d.fy = event.y;
+    }
+    function dragended(event, d) {
+        if (!event.active) simulation.alphaTarget(0);
+        d.fx = null; d.fy = null;
+    }
+</script>
