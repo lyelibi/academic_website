@@ -14,7 +14,7 @@ weight: 35
 title: Project Graph
 
 design:
-	columns: "1"
+	columns: '1'
 
 ---
 
