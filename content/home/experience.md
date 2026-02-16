@@ -5,6 +5,7 @@ widget: experience
 
 # This file represents a page section.
 headless: true
+active: false
 
 # Order that this section appears on the page.
 weight: 40
@@ -22,7 +23,7 @@ date_format: Jan 2006
 #   Leave `date_end` empty if it's your current employer.
 #   Begin multi-line descriptions with YAML's `|2-` multi-line prefix.
 experience:
-  - title: Lead AI Scientist
+  - title: Lead Research Scientist
     company: Capital One
     company_url: ''
     company_logo:
@@ -40,7 +41,7 @@ experience:
     date_end: '2022-03-01'
     description:
         
-  - title: AI Scientist
+  - title: Machine Learning Research Scientist
     company: Boston Fusion Corp.
     company_url: ''
     company_logo:

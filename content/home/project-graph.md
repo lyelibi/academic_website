@@ -3,7 +3,7 @@
 widget: blank
 
 # Activate this widget? true/false
-active: true
+active: false
 
 # This file represents a page section.
 headless: true
@@ -11,14 +11,14 @@ headless: true
 # Order that this section appears on the page.
 weight: 35
 
-title: Project Graph
+title: Project Graph (In Progress)
 
-# design:
-# 	columns: '1'
+design:
+	columns: '2'
 ---
 
-Use the project graph shortcode below to render the graph for your projects:
+<!-- Use the project graph shortcode below to render the graph for your projects: -->
 
 {{< project-graph >}}
 
-You can add additional text or shortcodes above or below the shortcode as needed
+<!-- You can add additional text or shortcodes above or below the shortcode as needed -->
