@@ -13,8 +13,8 @@ weight: 35
 
 title: Project Graph
 
-design:
-	columns: '1'
+# design:
+# 	columns: '1'
 ---
 
 Use the project graph shortcode below to render the graph for your projects:
