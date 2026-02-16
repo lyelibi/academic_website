@@ -1,7 +1,7 @@
 ---
 widget: "custom"
 weight: 35
-active: true
+active: false
 headless: true
 title: "Project Graph"
 ---
