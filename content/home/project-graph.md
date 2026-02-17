@@ -3,7 +3,7 @@
 widget: blank
 
 # Activate this widget? true/false
-active: true
+active: false
 
 # This file represents a page section.
 headless: true
@@ -14,7 +14,7 @@ weight: 35
 title: Project Graph (In Progress)
 
 design:
-    columns: "4"
+    columns: "2"
 ---
 
 <!-- Use the project graph shortcode below to render the graph for your projects: -->
