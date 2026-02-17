@@ -18,8 +18,9 @@ image:
   focal_point: "Smart"
   preview_only: false
 
-# Make the page wider
-pager: false
+design:
+  # Choose how many columns the section has. Valid values: '1' or '2'.
+  columns: '2'
 ---
 
 The Ising model is perhaps the most prevalent statistical model in physics, serving as the "fruit fly" for understanding phase transitions, critical phenomena, and emergent behavior in complex systems. While deceptively simple in its definition, it successfully reproduces the collective behavior observed in real-world ferromagnetic materials.
