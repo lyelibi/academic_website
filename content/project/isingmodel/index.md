@@ -58,6 +58,11 @@ This satisfies detailed balance, ensuring the system eventually reaches the Bolt
 
 The following dashboard summarizes the complete analysis, visualizing the system from four different analytical perspectives.
 
+<style>
+  .article-container {
+    overflow: visible !important;
+  }
+</style>
 <!-- ![Ising Model Dashboard](isingmodel.svg "Fig 1. A complete dashboard of the Ising Model simulation results.") -->
 <div style="width: 100vw; position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; max-width: 100vw;">
   <img src="isingmodel.svg" alt="Ising Model Dashboard" style="width: 100%; height: auto; display: block;">
