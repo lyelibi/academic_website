@@ -59,7 +59,9 @@ This satisfies detailed balance, ensuring the system eventually reaches the Bolt
 The following dashboard summarizes the complete analysis, visualizing the system from four different analytical perspectives.
 
 <!-- ![Ising Model Dashboard](isingmodel.svg "Fig 1. A complete dashboard of the Ising Model simulation results.") -->
-<img src="isingmodel.svg" alt="Ising Model Dashboard" width="100%">
+<div style="width: 100vw; position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; max-width: 100vw;">
+  <img src="isingmodel.svg" alt="Ising Model Dashboard" style="width: 100%; height: auto; display: block;">
+</div>
 
 ### 1. Microscopic Dynamics and Domain Growth
 The top row visualizes the non-equilibrium time evolution of the lattice at a fixed temperature below the critical point ($T=1.7 < T_c$). At $t=0$, the system is initialized as a random paramagnetic state (infinite temperature). As the simulation proceeds, thermal noise is insufficient to overcome the ferromagnetic ordering tendency. We observe the nucleation of small ordered clusters, which subsequently grow and merge. This process, known as **coarsening** or domain growth, shows the system striving to minimize interfacial energy by reducing the boundary length between "up" and "down" regions, eventually approaching a uniform ordered state.
